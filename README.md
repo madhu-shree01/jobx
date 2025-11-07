@@ -1,0 +1,47 @@
+JobX – Smart Job Application Tracker
+------------------------------------------
+A modern **full-stack Django web application** designed to help users **track their job applications** efficiently — from applying to receiving an offer.  
+JobX helps you stay organized, visualize progress, and never miss a follow-up again!
+
+---
+
+## 🌟 Features
+
+✅ **User Authentication**
+- Secure Login & Registration system using Django’s built-in auth.
+- Personalized dashboard for each user.
+
+✅ **Job Tracking Dashboard**
+- Add, edit, and delete job applications.
+- Save company name, role, job link, notes, and application status.
+
+✅ **Smart Follow-Up Reminder**
+- Automatically highlights applications that need follow-up.
+- Tracks overdue and upcoming reminders.
+
+✅ **Responsive UI**
+- Built with **Tailwind CSS** for a clean, modern interface.
+- Works perfectly on desktop and mobile.
+
+✅ **Database Integration**
+- Stores all jobs securely with a relational database (SQLite/PostgreSQL).
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|--------|-------------|
+| Frontend | HTML, Tailwind CSS |
+| Backend | Django (Python) |
+| Database | SQLite (default) |
+| Deployment | GitHub + Render (planned) |
+
+---
+
+## 🚧 Project Setup (Run Locally)
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/madhu-shree01/jobx.git
+cd jobx
