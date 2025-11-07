@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mx-auto px-4 py-8">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-3xl font-bold text-gray-800">Your Job Applications</h2>
+    <a href="{% url 'add_job' %}" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+      + Add Job
+    </a>
+  </div>
+
+  {% for job in jobs %}
+  <div class="bg-white p-5 shadow mb-5 rounded-lg border-l-4 
+      {% if job.status == 'APPLIED' %}border-blue-400
+      {% elif job.status == 'INTERVIEW' %}border-yellow-400
+      {% elif job.status == 'OFFER' %}border-green-500
+      {% elif job.status == 'REJECTED' %}border-red-500
+      {% elif job.status == 'GHOSTED' %}border-gray-400
+      {% endif %}
+  ">
+    <!-- Company + Role -->
+    <h3 class="text-xl font-semibold text-gray-800">{{ job.company }}</h3>
+    <p class="text-gray-600 text-sm mb-2">{{ job.role }}</p>
+
+    <!-- Status Badge -->
+    <span class="inline-block px-3 py-1 text-xs font-medium rounded-full
+        {% if job.status == 'APPLIED' %}bg-blue-100 text-blue-800
+        {% elif job.status == 'INTERVIEW' %}bg-yellow-100 text-yellow-800
+        {% elif job.status == 'OFFER' %}bg-green-100 text-green-800
+        {% elif job.status == 'REJECTED' %}bg-red-100 text-red-800
+        {% elif job.status == 'GHOSTED' %}bg-gray-100 text-gray-800
+        {% endif %}
+    ">
+      {{ job.status }}
+    </span>
+
+    <!-- Dates -->
+    <p class="text-gray-600 text-sm mt-2">Applied on: {{ job.date_applied }}</p>
+    <p class="text-gray-600 text-sm">Follow-up: {{ job.follow_up_date }}</p>
+
+    <!-- Follow-up Alerts -->
+    {% if job.follow_up_date == today %}
+    <div class="mt-2 bg-yellow-100 text-yellow-800 text-sm p-2 rounded">
+      ⚠️ Follow up with {{ job.company }} today!
+    </div>
+    {% elif job.follow_up_date < today %}
+    <div class="mt-2 bg-red-100 text-red-700 text-sm p-2 rounded">
+      ⏰ Follow-up overdue for {{ job.company }}!
+    </div>
+    {% elif job.status == "OFFER" %}
+    <div class="mt-2 bg-green-100 text-green-700 text-sm p-2 rounded">
+      🎉 Congrats! You got an offer from {{ job.company }}!
+    </div>
+    {% endif %}
+
+    <!-- Actions -->
+    <div class="mt-4 flex justify-end gap-4 text-sm">
+      <a href="{% url 'edit_job' job.id %}" class="text-blue-600 hover:underline">Edit</a>
+      <a href="{% url 'delete_job' job.id %}" class="text-red-600 hover:underline">Delete</a>
+    </div>
+  </div>
+  {% empty %}
+  <p class="text-gray-600">No jobs added yet. Click “Add Job” to start tracking!</p>
+  {% endfor %}
+</div>
+
+{% endblock %}
