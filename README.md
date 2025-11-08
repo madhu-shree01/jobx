@@ -44,13 +44,14 @@ JobX helps you stay organized, visualize progress, and never miss a follow-up ag
 
 | Login Page | Dashboard |
 |-------------|------------|
-| ![Login](https://github.com/madhu-shree01/jobx/blob/main/screenshots/login.png) | ![Dashboard](https://github.com/madhu-shree01/jobx/blob/main/screenshots/dashboard.png) |
+| ![Login](https://github.com/madhu-shree01/jobx/blob/main/screenshots/login.png.png) | ![Dashboard](https://github.com/madhu-shree01/jobx/blob/main/screenshots/dashboard.png.png) |
 
 | Add Job Form | Register Page |
 |---------------|----------------|
-| ![Add Job](https://github.com/madhu-shree01/jobx/blob/main/screenshots/addjob.png) | ![Register](https://github.com/madhu-shree01/jobx/blob/main/screenshots/register.png) |
+| ![Add Job](https://github.com/madhu-shree01/jobx/blob/main/screenshots/addjob.png.png) | ![Register](https://github.com/madhu-shree01/jobx/blob/main/screenshots/register.png.png) |
 
 > ✨ *Clean and responsive UI built with Tailwind CSS.*
+
 
 
 
