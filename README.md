@@ -1,5 +1,13 @@
 JobX – Smart Job Application Tracker
 ------------------------------------------
+# 🚀 JobX – Smart Job Application Tracker  
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)  
+[![Django](https://img.shields.io/badge/Django-5.x-green.svg)](https://www.djangoproject.com/)  
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38BDF8.svg)](https://tailwindcss.com/)  
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+
+> 🧠 A smart Django web app to manage and track all your job applications — stay organized, visualize progress, and never miss a follow-up!
+
 A modern **full-stack Django web application** designed to help users **track their job applications** efficiently — from applying to receiving an offer.  
 JobX helps you stay organized, visualize progress, and never miss a follow-up again!
 
