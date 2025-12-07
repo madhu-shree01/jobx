@@ -55,7 +55,11 @@ JobX helps you stay organized, visualize progress, and never miss a follow-up ag
 ### 🆕 HR Module (New Feature)
 | HR Login | HR Dashboard |
 |-----------|--------------|
-| ![HR Login](screenshots/hr_login.png) | ![HR Dashboard](screenshots/hr_dashboard.png) |
+| ![HR Login](screenshots/hr_login.png/hr_pagelogin.png) | ![HR Dashboard](screenshots/hr_dashboard.png) |
+| HR Status Update |
+|------------------|
+| ![HR Update](screenshots/hr_update.png) |
+
 
 ✨ *HR can log in, view all job applications, and update status in real-time.*
 
