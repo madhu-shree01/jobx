@@ -6,17 +6,39 @@
     <title>JobX - Smart Job Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 text-gray-900">
 
     <!-- NAVBAR -->
     <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+        
+        <!-- Logo -->
         <h1 class="text-2xl font-bold text-indigo-600">JobX</h1>
 
+        <!-- Right Side Links -->
         {% if user.is_authenticated %}
-        <div class="flex items-center gap-4">
-            <span class="text-gray-700">Hi, {{ user.username }}</span>
-            <a href="{% url 'logout' %}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Logout</a>
-        </div>
+            <!-- Logged In -->
+            <div class="flex items-center gap-4">
+                <span class="text-gray-700">Hi, {{ user.username }}</span>
+                <a href="{% url 'logout' %}"
+                   class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                    Logout
+                </a>
+            </div>
+
+        {% else %}
+            <!-- Not Logged In (Show Login Options) -->
+            <div class="flex items-center gap-6">
+                <a href="{% url 'login' %}" 
+                   class="text-gray-700 hover:text-indigo-600 font-medium">
+                    User Login
+                </a>
+
+                <a href="{% url 'hr_login' %}" 
+                   class="text-indigo-600 font-semibold hover:underline">
+                    HR Login
+                </a>
+            </div>
         {% endif %}
     </nav>
 

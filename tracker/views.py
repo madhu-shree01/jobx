@@ -90,5 +90,44 @@ def logout_user(request):
     messages.info(request, "Logged out successfully.")
     return redirect('login')
 
+# HR login
+def hr_login(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(request, username=username, password=password)
+
+        if user and hasattr(user, "hr"):
+            login(request, user)
+            return redirect('hr_dashboard')  
+        else:
+            return render(request, "hr_login.html", {"error": "Invalid HR Login"})
+
+    return render(request, "hr_login.html")
+
+# HR dashboard
+@login_required
+def hr_dashboard(request):
+    if not hasattr(request.user, "hr"):
+        return redirect("home")
+
+    jobs = Job.objects.all().order_by("-date_applied")
+    return render(request, "hr_dashboard.html", {"jobs": jobs})
+# HR update
+@login_required
+def hr_update_status(request, job_id):
+    if not hasattr(request.user, "hr"):
+        return redirect("home")
+
+    job = Job.objects.get(id=job_id)
+
+    if request.method == "POST":
+        new_status = request.POST.get("status")
+        job.status = new_status
+        job.save()
+        return redirect("hr_dashboard")
+
+    return render(request, "hr_update_status.html", {"job": job})
 
 

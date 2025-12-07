@@ -19,15 +19,21 @@ class Job(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="APPLIED")
     date_applied = models.DateField(auto_now_add=True)
     notes = models.TextField(blank=True, null=True)
-
-    # 🆕 New follow-up reminder field
     follow_up_date = models.DateField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        # Auto set follow-up date 7 days after applying
         if not self.follow_up_date and self.status == "APPLIED":
             self.follow_up_date = timezone.now().date() + timedelta(days=7)
         super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.company} - {self.role}"
+
+
+
+class HR(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    company = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"HR - {self.company}"
