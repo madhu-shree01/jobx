@@ -52,6 +52,12 @@ JobX helps you stay organized, visualize progress, and never miss a follow-up ag
 
 > ✨ *Clean and responsive UI built with Tailwind CSS.*
 
+### 🆕 HR Module (New Feature)
+| HR Login | HR Dashboard |
+|-----------|--------------|
+| ![HR Login](screenshots/hr_login.png) | ![HR Dashboard](screenshots/hr_dashboard.png) |
+
+✨ *HR can log in, view all job applications, and update status in real-time.*
 
 
 
